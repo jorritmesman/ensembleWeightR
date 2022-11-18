@@ -30,8 +30,7 @@ weight_ensemble <- function(df_ens, target_var, method = "default",
   
   if(method == "default"){
     method_func = method_list$function.[which(method_list$default)]
-  }
-  if(method %in% method_list$method){
+  }else if(method %in% method_list$method){
     method_func = method_list$function.[which(method_list$method == method)]
   }else{
     stop("Method ", method, " is unknown. Should be one of:\n",
