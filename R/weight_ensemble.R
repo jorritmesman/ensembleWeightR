@@ -22,19 +22,21 @@
 # library(stacks)
 
 weight_ensemble <- function(df_ens, target_var, method = "default",
-                            groups_vars = NULL, ...){
+                            group_vars = NULL, ...){
   
   # Check input variables, including if method is listed in our list of methods
   # Maybe also create a list_methods function, which prints the csv file
   # where we store the included methods and the functions that they link to
   
   if(method == "default"){
-    method_func = reg_glm
+    method_func = method_list$function.[which(method_list$default)]
+  }
+  if(method %in% method_list$method){
+    method_func = method_list$function.[which(method_list$method == method)]
   }else{
-    stop("Method ", method, " is unknown")
+    stop("Method ", method, " is unknown. Should be one of:\n",
+         paste(method_list$method, collapse = "\n"))
   }
   
-  output = method_func(df_ens, target_var, group_vars, ...)
-  
+  output = get(method_func)(df_ens, target_var, group_vars, ...)
 }
-
