@@ -1,0 +1,2 @@
+method,default,function,packages
+reg_glm,TRUE,reg_glm,stacks tune parsnip rsample purrr workflows rlang
