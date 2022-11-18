@@ -1,14 +1,15 @@
 # This script contains all functions that apply weighting methods
 
-#' Apply ensemble weighting
+#' Apply regularised generalized linear model
 #'
-#' Apply user-defined metric and method to weight ensembles
+#' Apply regularised generalized linear model to weight ensembles
 #'
 #' @param df_ens data.frame
 #' @param target_var character; column name in df_ens containing the target variable
-#' @param method character; 
 #' @param group_vars character; column names in df_ens to group over
-#' @param ...; arguments fed into the function specified by 'method'
+#' @param times integer; number of times bootstrapping is applied
+#' @param penalty numeric; penalties to test
+#' @param mixture numeric; mixtures to test, 0-1
 #'
 #' @source 
 #' https://www.tmwr.org/ensembles.html#blend-predictions
