@@ -15,7 +15,7 @@
 #'
 #' @examples
 #' 
-#' @importFrom stringr
+#' @importFrom stringr str_match_all
 
 extract_weights_reg_glm = function(char){
   # Make a function that returns a data.frame with the weights per model
