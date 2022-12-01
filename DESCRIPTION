@@ -12,8 +12,10 @@ License:
 Depends:
     R (>= 3.5)
 Imports:
-    dplyr
-Suggests:
+    dplyr,
+    parsnip,
+    stacks,
+    workflows
 Encoding: UTF-8
 LazyData: true
 LazyLoad: true
